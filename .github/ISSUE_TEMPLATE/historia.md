@@ -1,7 +1,7 @@
 ---
 name: Historia
 about: Template criado para historias de usuario
-title: ''
+title: Titulo da Historia
 labels: Historia, Mobile
 assignees: ''
 

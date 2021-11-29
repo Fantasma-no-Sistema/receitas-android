@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/receitasFragment"
-        android:name="com.fantasma.receitas.view.ReceitasFragment"
+        android:name="com.fantasma.receitas.view.home.fragment.ReceitasFragment"
         android:label="ReceitasFragment"
         tools:layout="@layout/fragment_receitas">
         <action

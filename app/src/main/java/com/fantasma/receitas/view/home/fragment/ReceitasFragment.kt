@@ -1,4 +1,4 @@
-package com.fantasma.receitas.view
+package com.fantasma.receitas.view.home.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -22,9 +22,7 @@ class ReceitasFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         mBinding = FragmentReceitasBinding.inflate(layoutInflater)
-        mBinding.button.setOnClickListener {
-            findNavController().navigate(R.id.action_receitasFragment_to_splashScreenFragment)
-        }
+
         return mBinding.root
     }
 }

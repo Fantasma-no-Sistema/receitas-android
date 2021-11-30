@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.ViewSwitcher
+import androidx.core.view.children
 import androidx.recyclerview.widget.RecyclerView
 import com.fantasma.receitas.R
 import com.fantasma.receitas.domain.Receita
@@ -18,20 +20,28 @@ class ReceitasAdapter(val list: ArrayList<Receita>) :
 
         val textViewTituloReceita = itemView.findViewById<TextView>(R.id.textViewTituloReceita)
         val imageViewFotoReceita = itemView.findViewById<ImageView>(R.id.imageViewFotoReceita)
-        val imageButtonFavoritar = itemView.findViewById<ImageButton>(R.id.imageButtonFavoritar)
         val imageButtonCompartilhar = itemView.findViewById<ImageButton>(R.id.imageButtonCompartilhar)
+        val viewSwitcher = itemView.findViewById<ViewSwitcher>(R.id.viewSwitcherFavorito)
 
         fun bindData(receita: Receita) {
             textViewTituloReceita.text = receita.titulo
             Picasso.get().load(receita.imgUri).into(imageViewFotoReceita)
-            imageButtonFavoritar.setBackgroundColor(context.resources.getColor(R.color.black))
+
+            if (receita.favorite) {
+                viewSwitcher.displayedChild = 1
+            } else {
+                viewSwitcher.displayedChild = 0
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReceitaViewHolder {
         val view =
             LayoutInflater.from(parent.context).inflate(R.layout.layout_item_receita, parent, false)
-        return ReceitaViewHolder(view)
+
+
+
+        return ReceitaViewHolder(view, parent.context)
     }
 
     override fun onBindViewHolder(holder: ReceitaViewHolder, position: Int) {

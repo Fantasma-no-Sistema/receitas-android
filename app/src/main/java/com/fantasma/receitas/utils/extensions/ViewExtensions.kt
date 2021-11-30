@@ -1,6 +1,7 @@
 package com.fantasma.receitas.utils.extensions
 
 import android.view.View
+import android.widget.Toast
 
 fun View.gone() {
     this.visibility = View.GONE

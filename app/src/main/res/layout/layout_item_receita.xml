@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:padding="5dp">
 
     <LinearLayout
@@ -31,22 +31,30 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/imageButtonFavoritar"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="24dp"
-            android:backgroundTint="null"
-            tools:src="@drawable/ic_favorito" />
+        <ViewSwitcher
+            android:id="@+id/viewSwitcherFavorito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="24dp">
 
-        <ImageButton
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_favorito" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_favorito_enable"/>
+        </ViewSwitcher>
+
+        <ImageView
             android:id="@+id/imageButtonCompartilhar"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="24dp"
-            android:backgroundTint="null"
             tools:src="@drawable/ic_compartilhar" />
     </LinearLayout>
 
